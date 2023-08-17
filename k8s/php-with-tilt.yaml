@@ -1,0 +1,20 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: php-with-tilt
+  labels:
+    app: php-with-tilt
+spec:
+  selector:
+    matchLabels:
+      app: php-with-tilt
+  template:
+    metadata:
+      labels:
+        app: php-with-tilt
+    spec:
+      containers:
+      - name: php-with-tilt
+        image: php-with-tilt-image
+        ports:
+        - containerPort: 8000
