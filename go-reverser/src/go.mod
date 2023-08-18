@@ -1,4 +1,4 @@
-module github.com/szogyenyid/php-with-tilt
+module github.com/szogyenyid/learning-tilt
 
 go 1.21.0
 
