@@ -10,3 +10,7 @@ k8s_resource('php-with-tilt', port_forwards=8000, labels=["backend"])
 ## MySQL instance
 k8s_yaml('k8s/mysql.yaml')
 k8s_resource('mysql-deployment', port_forwards=3306, labels=["infra"])
+
+## PhpMyAdmin
+k8s_yaml('k8s/phpmyadmin.yaml')
+k8s_resource('phpmyadmin-deployment', port_forwards=8080, labels=["infra"])
