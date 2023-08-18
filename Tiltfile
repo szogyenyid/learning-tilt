@@ -13,7 +13,7 @@ k8s_resource('go-reverser', port_forwards=8001, labels=["backend"])
 
 # Infra
 ## MySQL instance
-k8s_yaml('k8s/mysql.yaml')
+k8s_yaml(kustomize('k8s/mysql'))
 k8s_resource('mysql', port_forwards=3306, labels=["infra"])
 
 ## PhpMyAdmin
