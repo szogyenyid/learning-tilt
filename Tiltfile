@@ -6,6 +6,11 @@ docker_build('dummy-php-app-image', 'dummy-php-app', live_update=[
 k8s_yaml('k8s/dummy-php-app.yaml')
 k8s_resource('dummy-php-app', port_forwards=8000, labels=["backend"])
 
+## Reverser service
+docker_build('go-reverser-image', 'go-reverser')
+k8s_yaml('k8s/go-reverser.yaml')
+k8s_resource('go-reverser', port_forwards=8001, labels=["backend"])
+
 # Infra
 ## MySQL instance
 k8s_yaml('k8s/mysql.yaml')

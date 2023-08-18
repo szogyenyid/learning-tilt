@@ -1,0 +1,20 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: go-reverser
+  labels:
+    app: go-reverser
+spec:
+  selector:
+    matchLabels:
+      app: go-reverser
+  template:
+    metadata:
+      labels:
+        app: go-reverser
+    spec:
+      containers:
+      - name: go-reverser
+        image: go-reverser-image
+        ports:
+        - containerPort: 8001
