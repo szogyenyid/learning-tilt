@@ -1,21 +1,21 @@
 apiVersion: apps/v1
 kind: Deployment
 metadata:
-  name: php-with-tilt
+  name: dummy-php-app
   labels:
-    app: php-with-tilt
+    app: dummy-php-app
 spec:
   selector:
     matchLabels:
-      app: php-with-tilt
+      app: dummy-php-app
   template:
     metadata:
       labels:
-        app: php-with-tilt
+        app: dummy-php-app
     spec:
       containers:
-      - name: php-with-tilt
-        image: php-with-tilt-image
+      - name: dummy-php-app
+        image: dummy-php-app-image
         ports:
           - containerPort: 8000
         env:
