@@ -1,3 +1,15 @@
+# Frontend
+## Frontend
+docker_build('frontend-image', 'frontend',
+  live_update=[
+    # when package.json changes, we need to do a full build
+    fall_back_on(['frontend/package.json', 'frontend/package-lock.json']),
+    # Map the local source code into the container under /src
+    sync('frontend', '/src'),
+  ])
+k8s_yaml('k8s/frontend.yaml')
+k8s_resource('frontend', port_forwards=8888, labels=["frontend"])
+
 # Backend
 ## Main app
 docker_build('dummy-php-app-image', 'dummy-php-app', live_update=[
